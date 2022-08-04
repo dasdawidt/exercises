@@ -1,3 +1,9 @@
+/**
+ * Submission: https://leetcode.com/submissions/detail/765304821/
+ * Runtime: 151 ms, faster than 36.44% of JavaScript online submissions for Number of Islands.
+ * Memory Usage: 49.9 MB, less than 38.85% of JavaScript online submissions for Number of Islands.
+ */
+
 //SOLUTION:
 /**
  * @param {character[][]} grid A grid of '0' and '1' where '0' is water and '1' is land.
@@ -20,8 +26,8 @@
 /**
  * @param {character[][]} grid A grid of values.
  * @param {character} value A value.
- * @param {number} rowStart The starting row.
- * @param {number} columnStart The starting column.
+ * @param {number} rowStart 
+ * @param {number} columnStart
  * @return {number[]} The position of the value, [-1, -1] if not found.
  */
 var findValue = function(grid, value, rowStart = 0, columnStart = 0) {
@@ -29,11 +35,12 @@ var findValue = function(grid, value, rowStart = 0, columnStart = 0) {
         throw new Error('Parameters rowStart and rowEnd must be 0 or higher.');
     }
     for (let i = rowStart; i < grid.length; i++) {
-        for (let j = columnStart; j < grid[j.length]; j++) {
+        for (let j = columnStart; j < grid[i].length; j++) {
             if (grid[i][j] == value) {
                 return [i, j];
             }
         }
+        columnStart = 0;
     }
     return [-1, -1];
 }
@@ -77,6 +84,12 @@ var findValue = function(grid, value, rowStart = 0, columnStart = 0) {
 };
 
 //TESTS:
-let actual = floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2);
-let expected = [[2,2,2],[2,2,0],[2,0,1]];
+let actual = numIslands([["1","1","1"],["1","1","0"],["1","0","1"]]);
+let expected = 2;
+console.log(`actiual: ${actual}; expected: ${expected}`);
+console.assert(JSON.stringify(actual) === JSON.stringify(expected));
+
+actual = numIslands([["0","1","0"],["1","0","1"],["0","1","0"]]);
+expected = 4;
+console.log(`actiual: ${actual}; expected: ${expected}`);
 console.assert(JSON.stringify(actual) === JSON.stringify(expected));

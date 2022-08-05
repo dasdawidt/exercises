@@ -86,10 +86,10 @@ var findValue = function(grid, value, rowStart = 0, columnStart = 0) {
 //TESTS:
 let actual = numIslands([["1","1","1"],["1","1","0"],["1","0","1"]]);
 let expected = 2;
-console.log(`actiual: ${actual}; expected: ${expected}`);
+console.log(`actual: ${actual}; expected: ${expected}`);
 console.assert(JSON.stringify(actual) === JSON.stringify(expected));
 
 actual = numIslands([["0","1","0"],["1","0","1"],["0","1","0"]]);
 expected = 4;
-console.log(`actiual: ${actual}; expected: ${expected}`);
+console.log(`actual: ${actual}; expected: ${expected}`);
 console.assert(JSON.stringify(actual) === JSON.stringify(expected));

@@ -6,7 +6,7 @@
 
 //SOLUTION:
 /**
- * @param {number[][]} grid A grid of '0' and '1' where '0' is water and '1' is land.
+ * @param {number[][]} grid A grid of 0 and 1 where 0 is water and 1 is land.
  * @return {number} The max area of an island in the grid. 0 when no island is present.
  */
  var maxAreaOfIsland = function(grid) {
